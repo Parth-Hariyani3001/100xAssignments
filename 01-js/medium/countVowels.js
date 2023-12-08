@@ -6,17 +6,16 @@
 */
 
 function countVowels(str) {
-    const vowels = ['a','e','i','o','u'];
-    let count = 0;
-    let a = str.toLowerCase().split();
-    for(let i = 0; i < a.length; i++ ){
-      for(let j = 0; j < vowels.length; j++){
-        if(a[i] === vowels[j]){
-          count++;
-        }
-      }
+  const vowels = ['a', 'e', 'i', 'o', 'u'];
+  let count = 0;
+  let a = str.toLowerCase();
+  for (let i = 0; i < a.length; i++) {
+    if (vowels.includes(a[i])) {
+      count++;
     }
-    return count === 0 ? 0 : count;
+  }
+  return count == 0 ? 0 : count;
 }
+// console.log(countVowels('aeiou'))
 
 module.exports = countVowels;

@@ -11,7 +11,42 @@
 */
 
 class Todo {
+  constructor() {
+    this.arr = [];
+  }
 
+  add(todo) {
+    this.arr.push(todo);
+  }
+
+  remove(idx) {
+    const beforeRemoval = this.arr.slice(0, idx);
+    const afterRemoval = this.arr.slice(idx + 1)
+    this.arr = [];
+    this.arr = this.arr.concat(beforeRemoval, afterRemoval)
+  }
+
+  update(idx, updatedTodo) {
+    if (!this.arr[idx]) {
+      return;
+    }
+    this.arr[idx] = updatedTodo;
+  }
+
+  getAll() {
+    return this.arr;
+  }
+
+  get(idx) {
+    if (!this.arr[idx]) {
+      return null;
+    }
+    return this.arr[idx];
+  }
+
+  clear() {
+    this.arr = [];
+  }
 }
 
 module.exports = Todo;
